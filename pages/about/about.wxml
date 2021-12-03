@@ -1,0 +1,68 @@
+<view>
+  <!-- 头部导航栏组件 -->
+  <cu-custom bgColor="bg-gradual-pink" isback="{{ true }}">
+    <!-- <view slot="backText" bindtap="navigatorBack">返回</view> -->
+    <view slot="content">个人中心</view>
+  </cu-custom>
+<view class="header">
+    <!-- 侧边栏 -->
+  <SideBar></SideBar>
+  <text class="cuIcon-search" bindtap="toSearch"></text>
+</view>
+
+  <view class="container">
+    <!-- 获取个人信息 -->
+    <view wx:if="{{!userInfo}}"><button bindtap="toLogin">登录</button></view>
+    <view  wx:else>
+      <view class="userinfo" bindtap="toMyPage">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="nickname">{{userInfo.nickname}}</text>
+        <text class="iconfont cuIcon-right"></text>
+    </view>
+    <!-- 最近播放 -->
+    <view class="recentlist" bindtap="toRecentPage">
+      <view class="recentInfo">
+        <image src="{{recentMusic[0].song.al.picUrl}}"></image>
+        <view class="itemInfo">
+          <text class="text">最近播放列表</text>
+          <text class="font">{{recentMusic.length}}首</text>
+        </view>
+      </view>
+    </view>
+
+      <!-- 我喜欢的音乐 -->
+      <view class="lovelistContainer" bindtap="toMusicList" data-listID="{{lovelist[0].id}}">
+      <view class="lovelistInfo">
+        <image src="{{lovelist[0].coverImgUrl}}"></image>
+        <view class="itemInfo">
+          <text class="text">我喜欢的音乐</text>
+          <text class="font">{{lovelist[0].trackCount}}首</text>
+        </view>
+      </view>
+    </view>
+    <view class="createlist">
+        <view class="title">创建歌单</view>
+        <view class="createlistItem" wx:for="{{createlist}}" 
+        bindtap="toMusicList" data-listID="{{item.id}}" wx:key="id">
+            <image src="{{item.coverImgUrl}}"></image>
+            <view class="itemInfo">
+              <text class="text">{{item.name}}</text>
+              <text class="font">{{item.trackCount}}首</text>
+            </view>
+        </view>
+    </view>
+    <!-- 收藏的歌单 -->
+    <view class="collectlist">
+      <view class="title">收藏歌单</view>
+      <view  class="collectlistItem" wx:for="{{collectlist}}" 
+        bindtap="toMusicList" data-listID="{{item.id}}"  wx:key="id">
+            <image src="{{item.coverImgUrl}}"></image>
+            <view class="itemInfo">
+              <text class="text">{{item.name}}</text>
+              <text class="font">{{item.trackCount}}首</text>
+            </view>
+      </view>
+    </view>
+    </view>
+  </view>
+</view>

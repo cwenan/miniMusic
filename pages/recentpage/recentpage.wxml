@@ -1,0 +1,30 @@
+<view>
+    <!-- 头部导航栏组件 -->
+    <cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+    <!-- <view slot="backText">返回</view> -->
+    <view slot="content">最近播放</view>
+    </cu-custom>
+
+    <view class="listContainer">
+        <view class="listHeader">
+            <text class="iconfont cuIcon-videofill"></text>
+            <text>播放全部</text>
+            <text class="chooseMore">多选</text>
+        </view>
+
+        <scroll-view scroll-y class="listScroll">
+            <view class="scrollItem" wx:for="{{recentMusic}}" bindtap="songPlayPage" data-song="{{item.song}}" data-index="{{index}}" wx:key="id">
+                <text class="number">{{index+1}}</text>
+                <view class="listInfo">
+                    <text class="musicName">{{item.song.name}}</text>
+                    <text class="singerInfo">
+                        <text class="singer" wx:for="{{item.song.ar}}" wx:for-item="singer" wx:key="id">{{singer.name}}</text>
+                        <text>-{{item.song.al.name}}</text>
+                    </text>
+                </view>
+                <text class="iconfont cuIcon-video"></text>
+                <text class="iconfont cuIcon-moreandroid"></text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

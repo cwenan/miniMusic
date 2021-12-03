@@ -1,0 +1,5 @@
+<!--components/playBar/playBar.wxml-->
+<view class="playBar">
+    <text>音乐ID{{musicID}}</text>
+</view>
+

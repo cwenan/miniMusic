@@ -1,0 +1,35 @@
+.editInfo {
+    padding: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+.item {
+    display: flex;
+}
+.item image {
+    position: absolute;
+    right: 20rpx;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+}
+.item text {
+    height: 50px;
+    line-height: 100rpx;
+    font-size: 35rpx;
+}
+.item {
+    border-bottom: gray solid 1rpx;
+}
+.item .nickname {
+    padding-left: 280rpx;
+}
+.item .gender {
+    width: 60rpx;
+    position: absolute;
+    right: 20rpx;
+}
+.item .birthday {
+    position: absolute;
+    right: 20rpx;
+}

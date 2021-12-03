@@ -1,0 +1,44 @@
+<view>
+    <!-- 头部导航栏组件 -->
+    <cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+    <!-- <view slot="backText">返回</view> -->
+    <view slot="content">Search</view>
+    </cu-custom>
+    <!-- 搜索框-->
+    <view class="box">
+        <view class="cu-bar search bg-white">
+            <view class="search-form round">
+            <text class="cuIcon-search"></text>
+            <input type="text" placeholder="搜索歌曲、歌手、歌单" confirm-type="search" bindinput="toSearchKey" value="{{defaultkey}}"></input>
+            <view>
+                <text class="iconfont cuIcon-close" bindtap="clear"></text>
+            </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 搜索内容显示 -->
+    <block wx:if="{{searchList.length}}">
+        <view class="showSearchContent">
+        <view class="searchList">
+            <view class="searchItem" wx:for="{{searchList}}" wx:key = "id" data-song="{{item}}" data-index="{{index}}" bindtap="songPlayPage">
+                <text class="cuIcon-search"></text>
+                <text class="content">{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+    </block>
+
+    <block wx:else>
+         <!-- 热榜 -->
+        <view class="hot">
+            <text class="hottitle">热搜榜</text>
+            <view class="hotlist">
+                <view wx:for="{{simplehot}}" wx:key="iconUrl" class="hotItem" >
+                    <text class="num">{{index+1}}</text>
+                    <text class="hotcontent">{{item.searchWord}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

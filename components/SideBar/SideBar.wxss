@@ -1,0 +1,8 @@
+/* components/SideBar/SideBar.wxss */
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
+.cuIcon-sort {
+    font-size: 60rpx;
+    width: 80rpx;
+    height: 80rpx;
+}

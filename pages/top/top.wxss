@@ -1,0 +1,50 @@
+/* pages/top/top.wxss */
+/* 设置滑动视图高度 */
+.topListContainer {
+    padding: 20rpx 40rpx;
+}
+.topListScroll {
+    height:200rpx;
+    margin-bottom: 40rpx;
+    padding: 20rpx;
+    border-radius: 30rpx;
+    background-color: rgba(255, 255, 255, 1);
+}
+.scrollItem{
+    display: flex;
+}
+.left {
+    padding-left: 50rpx;
+    display: flex;
+    flex-direction: column;
+}
+.left .name{
+    padding-bottom: 10rpx;
+    font-weight: bolder;
+    text-align: center;
+    max-width: 100rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.left image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+}
+.right{
+    padding-left: 90rpx;
+}
+.right .listInfo{
+    max-width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.right .listInfo text {
+    line-height: 60rpx;
+    line-height: 40rpx;
+}
+.right .listInfo text .one {
+    padding-right: 10rpx;
+}

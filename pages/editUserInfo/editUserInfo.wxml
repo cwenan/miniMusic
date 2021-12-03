@@ -1,0 +1,27 @@
+<view>
+    <!-- 头部导航栏组件 -->
+    <cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+    <!-- <view slot="backText">返回</view> -->
+    <view slot="content">我的资料</view>
+    </cu-custom>
+    <view class="editInfo">
+        <view class="item">
+            <text>头像</text>
+            <image src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="item" bindtap="updateNickName">
+            <text>昵称</text>
+            <text class="nickname" bin>{{userInfo.nickname}}</text>
+        </view>
+        <view class="item"  bindtap="showGenderModal">
+            <text>性别</text>
+            <text class="gender">{{gender}}</text>
+        </view>
+        <view class="item" bindchange="bindDateChange">
+            <text>生日</text>
+            <picker mode="date" value="{{date}}" >
+            <text class="birthday">{{birthday}}</text>
+            </picker>
+        </view>
+    </view>
+</view>

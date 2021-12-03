@@ -1,0 +1,39 @@
+<view class="dayRecommend">
+    <!-- 头部导航栏组件 -->
+    <cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+    <view slot="backText" bindtap="navigatorBack">返回</view>
+    <view slot="content">每日推荐</view>
+    </cu-custom>
+
+    <!-- 头部 -->
+    <view class="header">
+        <!-- <image src="/static/images/recommendSong/recommendSong.jpg"></image> -->
+        <view class="date">
+            <text class="day">{{day}}/</text>
+            <text class="month">{{month}}</text>
+        </view>
+    </view>
+
+    <!-- 列表区 -->
+    <view class="listContainer">
+        <view class="listHeader">
+            <text class="iconfont cuIcon-videofill"></text>
+            <text>播放全部</text>
+            <text class="chooseMore">多选</text>
+        </view>
+        <scroll-view scroll-y class="listScroll">
+            <view class="scrollItem" wx:for="{{songList}}" bindtap="songPlayPage" data-song="{{item}}" data-index="{{index}}" wx:key="id">
+                <image src="{{item.al.picUrl}}"></image>
+                <view class="listInfo">
+                    <text class="musicName">{{item.name}}</text>
+                    <text>
+                        <text class="singer" wx:for="{{item.ar}}" wx:for-item="singer" wx:key="id">{{singer.name}}</text>
+                        <text>-{{item.al.name}}</text>
+                    </text>
+                </view>
+                <text class="iconfont cuIcon-video"></text>
+                <text class="iconfont cuIcon-moreandroid"></text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

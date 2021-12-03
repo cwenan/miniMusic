@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
+    "NavHeader": "/components/NavHeader/NavHeader",
+    "SideBar":"/components/SideBar/SideBar",
+    "playBar":"/components/playBar/playBar"
+  }
+}

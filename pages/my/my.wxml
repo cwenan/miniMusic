@@ -1,0 +1,55 @@
+<!-- 头部导航栏组件 -->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+  <view slot="backText">返回</view>
+  <view slot="content">个人主页</view>
+</cu-custom>
+<view>
+    <view class="info">
+        <!-- <image class="bg" src="{{userInfo.backgroundUrl}}"></image> -->
+        <view class="userInfo">
+            <image src="{{userInfo.avatarUrl}}"></image>
+            <view class="infoList">
+                <view class="follow_lv">
+                    <view class="a">
+                        <text>{{userInfo.followeds}}</text>
+                        <text>粉丝</text>
+                    </view>
+                    <view class="a">
+                        <text>{{userInfo.follows}}</text>
+                        <text>关注</text>
+                    </view>
+                    <view class="a">
+                        <text>Lv.7</text>
+                        <text>等级</text>
+                    </view>
+                </view>
+                <view class="edit" bindtap="toEditUserInfoPage"><text>编辑信息</text></view>
+            </view>
+        </view>
+        <view class="baseInfo">
+            <view class="title">基本信息</view>
+            <view class="baseInfoItem">
+                <view class="item">
+                    <text>昵称：</text>
+                    <text>{{profile.nickname}}</text>
+                </view>
+                <view class="item">
+                    <text>性别：</text>
+                    <text>{{gender}}</text>
+                </view>
+                <view class="item">
+                    <text>userID：</text>
+                    <text>{{profile.userId}}</text>
+                </view>
+                <view class="item">
+                    <text>账号创建：</text>
+                    <text>{{createTime}}</text>
+                </view>
+                <view class="item">
+                    <text>上次登录：</text>
+                    <text>{{lastTime}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

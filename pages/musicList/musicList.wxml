@@ -1,0 +1,47 @@
+<view>
+        <!-- 头部导航栏组件 -->
+    <cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+    <!-- <view slot="backText">返回</view> -->
+    <view slot="content">歌单</view>
+    </cu-custom>
+
+    <view class="musicListHeader">
+        <view class="musicListDetails">
+            <image src="{{musicList.coverImgUrl}}"></image>
+        <view class="musicListInfo">
+            <text class="text01">{{musicList.name}}</text>
+            <text class="text02">详情</text>
+            <text class="text03">{{musicList.description}}</text>
+        </view>
+        </view>
+        <view class="ListCount">
+            <text>收藏：{{musicListInfo.bookedCount}}</text>
+            <text>评论：{{musicListInfo.commentCount}}</text>
+            <text>分享：{{musicListInfo.shareCount}}</text>
+        </view>
+    </view>
+
+    <!-- 列表区 -->
+    <view class="listContainer">
+        <view class="listHeader">
+            <text class="iconfont cuIcon-videofill"></text>
+            <text>播放全部</text>
+            <text class="chooseMore">多选</text>
+        </view>
+
+        <scroll-view scroll-y class="listScroll">
+            <view class="scrollItem" wx:for="{{listInfoArray}}" bindtap="songPlayPage" data-song="{{item}}" data-index="{{index}}" wx:key="id">
+                <text class="number">{{index+1}}</text>
+                <view class="listInfo">
+                    <text class="musicName">{{item.name}}</text>
+                    <text class="singerInfo">
+                        <text class="singer" wx:for="{{item.ar}}" wx:for-item="singer" wx:key="id">{{singer.name}}</text>
+                        <text>-{{item.al.name}}</text>
+                    </text>
+                </view>
+                <text class="iconfont cuIcon-video"></text>
+                <text class="iconfont cuIcon-moreandroid"></text>
+            </view>
+        </scroll-view>
+    </view>
+</view>

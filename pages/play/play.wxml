@@ -1,0 +1,43 @@
+    <!-- 头部导航栏组件 -->
+    <cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+    <view slot="backText" bindtap="navigatorBack"></view>
+    <view slot="content">{{songInfo.al.name}}</view>
+    </cu-custom>
+
+    <view class="playContainer">
+    <view class="singer">{{songInfo.ar[0].name}}</view>
+    <view bindtap="showLyric">
+        <view class="discContainer {{isPlay && 'discAnimation moveCircle'}}" hidden="{{isShowLyric}}">
+        <!-- <image class="disc" src="/static/images/song/disc.png"></image> -->
+        <image class="musicImg" src="{{songInfo.al.picUrl}}"></image>
+    </view>
+    <view hidden="{{!isShowLyric}}">
+        <scroll-view scroll-y="true" class="lyric-wrapper" scroll-top="{{scrollTop}}">
+        <view class="lyricContent">
+            <block wx:for="{{Lyric}}" wx:for-index="index">
+                <text class="{{lyricIndex==index? 'activeLyric':''}}">{{item[1]}}</text>
+            </block>
+        </view>
+        </scroll-view>
+    </view>
+    </view>
+
+    <!-- 播放进度条 -->
+    <view class="progressControl">
+        <text>{{currentTime}}</text>
+        <view class="progressLine">
+            <view class="currentTimeLine" style="width: {{currentTimeLineWidth + 'rpx'}};">
+                <view class="audioCircle"></view>
+            </view>
+        </view>
+        <text>{{durationTime}}</text>
+    </view>
+    <!-- 底部播放控制区 -->
+    <view class="musicControl">
+        <text class="iconfont cuIcon-like" bindtap="ilike"></text>
+        <text class="iconfont cuIcon-back" id="pre" bindtap="handleSwitch"></text>
+        <text class="iconfont {{isPlay?'cuIcon-musicfill':'cuIcon-playfill'}} big" bindtap="musicPlay"></text>
+        <text class="iconfont cuIcon-right" id="next" bindtap="handleSwitch"></text>
+        <text class="iconfont cuIcon-list" ></text>
+    </view>
+    </view>

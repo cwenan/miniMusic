@@ -1,0 +1,31 @@
+
+  <view class="action sidebar" >
+    <text class="iconfont cuIcon-sort" bindtap="showModal" data-target="DrawerModalL"></text>
+  </view>
+
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-lg" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    <view class="cu-list menu text-left">
+      <view class="cu-item arrow" bindtap="">
+        <view class="content">
+          <view bindtap="toMyPage">基本信息</view>
+        </view>
+      </view>
+      <view class="cu-item arrow" bindtap="">
+        <view class="content">
+          <view>我的消息</view>
+        </view>
+      </view>
+      <view class="cu-item arrow" bindtap="">
+        <view class="content">
+          <view>设置</view>
+        </view>
+      </view>
+      <view class="cu-item arrow" bindtap="logout">
+        <view class="content">
+          <view>退出登录</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

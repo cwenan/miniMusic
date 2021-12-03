@@ -1,0 +1,8 @@
+<cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+  <view slot="backText">返回</view>
+  <view slot="content">修改昵称</view>
+</cu-custom>
+<view class="edit">
+    <input type="text" value="{{nickname}}" focus='{{focus}}' bindinput="handleInput" ></input>
+    <text bindtap="updateNickName">保存</text> 
+</view>

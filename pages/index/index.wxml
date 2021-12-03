@@ -1,0 +1,93 @@
+<view class="container">
+<!-- 头部导航栏组件 -->
+<cu-custom bgColor="bg-gradual-pink" isback="{{ true }}">
+  <!-- <view slot="backText">返回</view> -->
+  <view slot="content">Music</view>
+</cu-custom>
+
+<view class="searchSider searchContainer">
+    <!-- 侧边栏 -->
+  <SideBar></SideBar>
+  <view class="cu-bar search" bindtap="toSearch">
+      <view class="search-form round">
+        <text class="cuIcon-search"></text>
+        <input type="text" value="{{defaultkey}}" confirm-type="search" disabled="disable"></input>
+      </view>
+    </view>
+</view>
+
+
+
+<!-- 轮播图-colorUI -->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key="bannerId" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.pic}}" mode="aspectFill" ></image>
+      <video src="{{item.pic}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+  <!--导航区域-->
+<view class="nav-box">
+  <view class="nav-item" bindtap="toDayRecommend">
+    <text class="iconfont cuIcon-discover"></text>
+    <text>每日推荐</text>
+  </view>
+  <view class="nav-item">
+    <text class="iconfont cuIcon-wefill"></text>
+    <text>私人FM</text>
+  </view>
+  <view class="nav-item" bindtap="toTopPage">
+    <text class="iconfont cuIcon-rankfill"></text>
+    <text>排行榜</text>
+  </view>
+  <view class="nav-item">
+    <text class="iconfont cuIcon-presentfill"></text>
+    <text>歌单</text>
+  </view>
+  <view class="nav-item">
+    <text class="iconfont cuIcon-write"></text>
+    <text>其他</text>
+  </view>
+</view>
+
+
+<!--  推荐歌单区域-->
+  <view class="recommendContainer">
+  <!-- 推荐歌单Header -->
+  <NavHeader title="推荐歌单" more="" ></NavHeader>
+<!--   歌单滚动-->
+    <view>
+      <scroll-view class="menu-scroll" scroll-x enable-flex >
+      <view class="scroll-item" wx:for="{{recommendList}}" wx:key="id" bindtap="toMusicList" data-listID="{{item.id}}">
+        <image src="{{item.picUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+    </view>
+  </view>
+
+<!-- 排行榜区域 -->
+  <view class="topList">
+  <!-- 头部 -->
+    <NavHeader title="排行榜" more="" bindtap="toTopPage"></NavHeader>
+    <!-- 内容 -->
+    <swiper class="topListSwiper" next-margin="50rpx">
+      <swiper-item wx:for="{{indextopList}}" wx:key="id">
+      <view class="topListSwiper-item" bindtap="toMusicList" data-listID="{{item.id}}">
+        <view class="list-title">{{item.name}}</view>
+          <view class="musicList-item" wx:for="{{item.tracks}}" wx:key="first" wx:for-item="musicItem">
+          <image src="{{item.coverImgUrl}}"></image>
+          <text class="count">{{index+1}}</text>
+          <text class="musicName">{{musicItem.first}}--{{musicItem.second}}</text>
+        </view>
+      </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>
+
+
+
+

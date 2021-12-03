@@ -1,0 +1,144 @@
+.container{
+    padding: 0 20rpx;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+}
+.header .cuIcon-search {
+    height: 100rpx;
+    width: 50rpx;
+    line-height: 100rpx;
+    font-size: 40rpx;
+    position: absolute;
+    right: 20rpx;
+}
+/* 头像昵称 */
+.userinfo{
+    display: flex;
+    width: 100%;
+    height: 120rpx;
+}
+.userinfo image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50rpx;
+}
+.userinfo .nickname{
+    padding-left: 30rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-weight: bold;
+}
+.userinfo .cuIcon-right{
+    font-size: 35rpx;
+    color: gray;
+    height: 100rpx;
+    line-height: 100rpx;
+    position: absolute;
+    right: 20rpx;
+    /* padding-left: 600rpx; */
+}
+
+/* 登录按钮 */
+
+/* 近期播放歌曲 */
+.recentlist{
+    height: 150rpx;
+    margin-top: 30rpx;
+    border-radius: 20rpx;
+    background-color: rgba(255, 255, 255, 1);
+}
+.recentInfo{
+    padding: 20rpx;
+    display: flex;
+}
+.recentlist image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 20rpx;
+}
+
+
+/* 我喜欢的音乐 */
+.lovelistContainer{
+    height: 150rpx;
+    margin-top: 30rpx;
+    border-radius: 20rpx;
+    background-color: rgba(255, 255, 255, 1);
+}
+.lovelistInfo{
+    padding: 20rpx;
+    display: flex;
+}
+.lovelistInfo image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 20rpx;
+}
+
+
+/* 创建歌单区域 */
+.createlist {
+    background-color: rgba(255, 255, 255, 1);
+    height: 300rpx;
+    margin-top: 30rpx;
+    border-radius: 20rpx;
+}
+.createlist .title {
+    padding: 10rpx;
+    font-weight: 600;
+}
+.createlistItem {
+    display: flex;
+    margin-bottom: 30rpx;
+    padding-left: 20rpx;
+}
+.createlistItem image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 20rpx;
+}
+
+/* 收藏歌单 */
+.collectlist {
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 30rpx;
+    border-radius: 20rpx;
+}
+.collectlist .title {
+    padding: 10rpx;
+    font-weight: 600;
+}
+.collectlistItem {
+    display: flex;
+    margin-bottom: 30rpx;
+    padding-left: 20rpx;
+}
+
+.collectlistItem image {
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 20rpx;
+}
+/* 统一样式 */
+.itemInfo {
+    padding-left: 50rpx;
+    display: flex;
+    flex-direction: column;
+}
+.itemInfo text{
+    height: 50rpx;
+    line-height: 50rpx;
+    max-width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.itemInfo .font {
+    font-weight: 200;
+    color: gray;
+}
+.itemInfo .text {
+    font-weight: 600;
+}

@@ -1,0 +1,26 @@
+<view>
+    <!-- 头部导航栏组件 -->
+    <cu-custom bgColor="bg-gradual-pink" isBack="{{ true }}">
+    <!-- <view slot="backText">返回</view> -->
+    <view slot="content">排行榜</view>
+    </cu-custom>
+
+    <!-- 排行榜单 -->
+    <view class="topListContainer">
+        <scroll-view class="topListScroll" wx:for="{{toplist}}" scroll-y bindtap="toMusicList" data-listID="{{item.id}}" >
+            <view class="scrollItem">
+                <view class="left">
+                    <view class="name">{{item.name}}</view>
+                    <image src="{{item.coverImgUrl}}"></image>
+                </view>
+                <view class="right">
+                    <view wx:for="{{item.tracks}}" wx:for-item = "song" wx:for-index="num" class="listInfo">
+                        <text class="one">{{num+1}}.</text>
+                        <text class="second">{{song.first}}-</text>
+                        <text class="thrid">{{song.second}}</text>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

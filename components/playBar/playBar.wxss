@@ -1,0 +1,11 @@
+/* components/playBar/playBar.wxss */
+.playBar{
+   display: flex; 
+   height: 200rpx;
+   width: 100%;
+}
+.playBar image {
+    width: 100rpx;
+    height: 100rpr;
+    border-radius: 50rpx;
+}

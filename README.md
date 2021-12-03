@@ -9,9 +9,7 @@
 
 ## 目前已实现功能
 
-![image-20211203114010870](C:\Users\Lenovo\Desktop\小程序\新建文件夹\music\README.assets\image-20211203114010870.png)
-
-
+![](https://s3.bmp.ovh/imgs/2021/12/63d8fbc39c089008.png)
 
 * 排行榜
 * 轮播图
